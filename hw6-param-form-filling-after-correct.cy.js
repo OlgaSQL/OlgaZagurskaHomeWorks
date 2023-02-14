@@ -7,7 +7,7 @@ describe('hw6-param-form-filling', () => {
         cy.contains("Form Layouts").click();
     });
 
-        describe('passwords', () => {
+        it('passwords', () => {
             const data = [
                 { testData: 1, expectedResult: 1 },
                 { testData: 'Cat', expectedResult: 'Cat' }
@@ -22,11 +22,12 @@ describe('hw6-param-form-filling', () => {
 
                     cy.get('#inputPassword2').type(testData);
                     cy.get('#inputPassword2').should("contain.value", expectedResult);
+                    cy.wait(2000);
                 })
             })
         })
 
-        describe('emails', () => {
+        it('emails', () => {
             const data = [
                 { testData: 'cat@gmail.com', expectedResult: 'cat@gmail.com' },
                 { testData: 'cat1@gmail.com', expectedResult: 'cat1@gmail.com' }
@@ -55,7 +56,7 @@ describe('hw6-param-form-filling', () => {
             })
         })
 
-        describe('logins,first names, last names', () => {
+        it('logins,first names, last names', () => {
             const data = [
                 { testData: 'Cat', expectedResult: 'Cat' },
                 { testData: 'Cat1', expectedResult: 'Cat1' }
@@ -76,7 +77,7 @@ describe('hw6-param-form-filling', () => {
             })
         })
 
-        describe('url', () => {
+        it('url', () => {
             const data = [
                 { testData: 'https://pisni.ua/dytiachi-pisni-kytsia-kytsiunia', expectedResult: 'https://pisni.ua/dytiachi-pisni-kytsia-kytsiunia' },
                 { testData: 'https://www.google.com/', expectedResult: 'https://www.google.com/' }
@@ -89,7 +90,7 @@ describe('hw6-param-form-filling', () => {
             })
         })
 
-        describe('text', () => {
+        it('text', () => {
             const data = [
                 { testData: 'cats is happy', expectedResult: 'cats is happy' },
                 { testData: 'cats is happy, fat and cut', expectedResult: 'cats is happy, fat and cut' }
